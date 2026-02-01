@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/stitch/static/css/main.85057dab.css",
-    "main.js": "/stitch/static/js/main.52d43961.js",
+    "main.js": "/stitch/static/js/main.cc556a05.js",
     "index.html": "/stitch/index.html",
     "main.85057dab.css.map": "/stitch/static/css/main.85057dab.css.map",
-    "main.52d43961.js.map": "/stitch/static/js/main.52d43961.js.map"
+    "main.cc556a05.js.map": "/stitch/static/js/main.cc556a05.js.map"
   },
   "entrypoints": [
     "static/css/main.85057dab.css",
-    "static/js/main.52d43961.js"
+    "static/js/main.cc556a05.js"
   ]
 }
