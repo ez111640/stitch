@@ -185,7 +185,7 @@ const HoopPanel = ({
         </div>
         <div className="action-row hoop-actions" ref={hoopActionsRef}>
             <button type="button" onClick={handleMakePattern} disabled={hoopImages.length === 0} className="btn btn-primary">
-                Make Cross Stitch Pattern
+                Make Pattern
             </button>
             <button type="button" onClick={deleteSelectedHoopItem} disabled={!selectedHoopId} className="btn">
                 Remove Selected

@@ -517,7 +517,7 @@ const tutorialSteps = [
     },
     {
         title: 'Step 4: Make your pattern',
-        description: 'Click “Make Cross Stitch Pattern” to generate the chart.',
+        description: 'Click “Make Pattern” to generate the chart.',
         image: createTutorialSvg('Generate your pattern', 'Export your final cross stitch', tutorialLayouts.patternBox)
     }
 ];
