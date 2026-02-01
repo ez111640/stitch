@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summernote Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h2>Summernote WYSIWYG Editor</h2>
+        <form id="myForm">
+            <textarea id="summernote"></textarea>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                height: 300,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture']]
+                ]
+            });
+
+            $('#myForm').on('submit', function (e) {
+                e.preventDefault();
+                var content = $('#summernote').val();
+                console.log(content); // Use the content as needed
+            });
+        });
+    </script>
+
+</body>
+
+</html>

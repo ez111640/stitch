@@ -1,0 +1,433 @@
+:root {
+    --pattern-bg: var(--cream);
+}
+
+.pattern-page {
+    min-height: 100vh;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--linen) 100%);
+    color: var(--ink);
+    box-sizing: border-box;
+}
+
+.pattern-main-panel {
+    flex: 0 0 auto;
+    align-self: stretch;
+    position: static;
+    z-index: 0;
+    max-height: calc(100vh - 80px);
+    overflow: hidden;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 8;
+}
+
+.pattern-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 22px rgba(58, 47, 43, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pattern-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pattern-header h2 {
+    margin: 0;
+}
+
+.pattern-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pattern-canvas {
+    border: 1px solid var(--border);
+    background: #ffffff;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.pattern-canvas-wrap {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: calc(100vh - 220px);
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+.pattern-cursor-swatch {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pattern-pixel-picker {
+    position: absolute;
+    transform: translate(12px, 12px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 20;
+    min-width: 240px;
+}
+
+.pattern-pixel-picker-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.pattern-pixel-select {
+    width: 100%;
+    min-height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--linen);
+    color: var(--ink);
+    padding: 4px 8px;
+    margin-bottom: 8px;
+}
+
+.pattern-pixel-close {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--linen);
+    color: var(--ink);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pattern-sidebar,
+.pattern-side-row,
+.pattern-side-column {
+    display: contents;
+}
+
+.pattern-hoop-panel {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 4;
+    max-height: calc((100vh - 80px - 48px) / 2);
+    overflow: auto;
+}
+
+.pattern-settings-panel {
+    grid-column: 7 / span 2;
+    grid-row: 1 / span 4;
+    max-height: calc((100vh - 80px - 48px) / 2);
+    overflow: auto;
+}
+
+.pattern-palette {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 4;
+    max-height: calc((100vh - 80px - 48px) / 2);
+    overflow: auto;
+}
+
+.pattern-palette-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pattern-palette-header h3 {
+    margin: 0;
+}
+
+.pattern-palette-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pattern-palette-list {
+    display: grid;
+    gap: 8px;
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.pattern-palette-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.pattern-palette-item:last-child {
+    border-bottom: none;
+}
+
+.pattern-color-name {
+    white-space: nowrap;
+}
+
+.pattern-picker-anchor {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pattern-picker-button {
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--border);
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pattern-swatch-symbol {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pattern-picker-menu {
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    margin-left: 8px;
+    margin-top: 4px;
+    z-index: 10;
+    max-height: 220px;
+    overflow: auto;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 6px;
+    display: grid;
+    gap: 4px;
+    min-width: 220px;
+}
+
+.pattern-picker-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #eee;
+    background: #ffffff;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.pattern-picker-swatch {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+.pattern-hoop-preview {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    margin: 0 auto;
+    height: auto;
+}
+
+.pattern-hoop-preview-oval {
+    border-radius: 50% / 40%;
+}
+
+.pattern-hoop-preview-square,
+.pattern-hoop-preview-rectangle {
+    border-radius: 14px;
+}
+
+.pattern-settings {
+    display: grid;
+    gap: 10px;
+}
+
+.pattern-setting-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.pattern-setting-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pattern-setting-row .pattern-setting-item {
+    flex: 1 1 auto;
+}
+
+.pattern-setting-help {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--latte);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: default;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.pattern-setting-help[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 10px);
+    transform: translateX(-50%);
+    min-width: 180px;
+    max-width: 220px;
+    background: var(--card);
+    color: #c4b8ae;
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(58, 47, 43, 0.18);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    white-space: pre-line;
+    z-index: 10;
+}
+
+.pattern-setting-help[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
+.pattern-settings-panel .pattern-setting-help[data-tooltip]::after {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+}
+
+.pattern-main-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pattern-setting-indent {
+    padding-left: 24px;
+}
+
+.pattern-setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pattern-setting-group.is-disabled .pattern-setting-child {
+    opacity: 0.5;
+}
+
+.pattern-setting-group.is-disabled .pattern-setting-child select,
+.pattern-setting-group.is-disabled .pattern-setting-child button {
+    cursor: pointer;
+}
+
+.pattern-setting-group.is-disabled:has(.pattern-setting-child:hover) .pattern-setting-parent input[type="checkbox"] {
+    box-shadow: 0 0 0 2px var(--ink);
+    border-color: var(--ink);
+}
+
+.pattern-color-preview {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    display: inline-block;
+}
+
+.pattern-paint-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.pattern-paint-swatch:disabled {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.pattern-reset {
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--linen);
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.pattern-meta-pill {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--linen);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pattern-hoop-canvas {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    image-rendering: pixelated;
+}

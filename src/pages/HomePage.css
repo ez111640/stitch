@@ -1,0 +1,52 @@
+/* src/pages/HomePage.css */
+.home-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.5rem;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature h2 {
+    color: #2575fc;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
