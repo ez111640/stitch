@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stitch/static/css/main.69b75ee5.css",
+    "main.js": "/stitch/static/js/main.dd4aa7fe.js",
+    "index.html": "/stitch/index.html",
+    "main.69b75ee5.css.map": "/stitch/static/css/main.69b75ee5.css.map",
+    "main.dd4aa7fe.js.map": "/stitch/static/js/main.dd4aa7fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69b75ee5.css",
+    "static/js/main.dd4aa7fe.js"
+  ]
+}
