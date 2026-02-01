@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/stitch/static/css/main.785302e5.css",
-    "main.js": "/stitch/static/js/main.c41d9f64.js",
+    "main.css": "/stitch/static/css/main.85057dab.css",
+    "main.js": "/stitch/static/js/main.52d43961.js",
     "index.html": "/stitch/index.html",
-    "main.785302e5.css.map": "/stitch/static/css/main.785302e5.css.map",
-    "main.c41d9f64.js.map": "/stitch/static/js/main.c41d9f64.js.map"
+    "main.85057dab.css.map": "/stitch/static/css/main.85057dab.css.map",
+    "main.52d43961.js.map": "/stitch/static/js/main.52d43961.js.map"
   },
   "entrypoints": [
-    "static/css/main.785302e5.css",
-    "static/js/main.c41d9f64.js"
+    "static/css/main.85057dab.css",
+    "static/js/main.52d43961.js"
   ]
 }
