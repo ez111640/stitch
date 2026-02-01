@@ -192,9 +192,16 @@ const PatternPage = () => {
     })();
     const themeStyle = (() => {
         try {
-            const raw = sessionStorage.getItem('stitchuation-theme');
-            if (!raw) return undefined;
-            const palette = JSON.parse(raw);
+            const palette = location.state?.themePalette
+                ? location.state.themePalette
+                : (() => {
+                    const raw = sessionStorage.getItem('stitchuation-theme');
+                    return raw ? JSON.parse(raw) : null;
+                })();
+            if (!palette) return undefined;
+            if (location.state?.themePalette) {
+                sessionStorage.setItem('stitchuation-theme', JSON.stringify(palette));
+            }
             return {
                 '--cream': palette.cream,
                 '--linen': palette.linen,

@@ -268,10 +268,10 @@
 }
 
 .logo-text {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink);
     white-space: nowrap;
@@ -306,7 +306,7 @@
 
 .components-panel {
     grid-column: 1 / span 3;
-    grid-row: 6 / span 3;
+    grid-row: 5 / span 4;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -316,8 +316,8 @@
     flex-direction: column;
     gap: 4px;
     min-height: 90px;
-    max-height: 280px;
-    margin-top: -10px;
+    height: 240px;
+    margin-top: 0;
     overflow: hidden;
 }
 
@@ -332,14 +332,27 @@
 .components-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.components-header {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.components-header .panel-title-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .components-toggle {
     display: flex;
     gap: 8px;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     background: #ffffff;
     border: none;
     border-radius: 12px;
@@ -350,12 +363,22 @@
     width: auto;
     min-width: 140px;
     max-width: 170px;
-    align-self: flex-start;
+    align-self: center;
     justify-content: center;
     background: var(--linen);
     border: 1px solid var(--border);
     color: var(--ink);
 }
+
+.btn-clear {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.btn-clear:hover:not(:disabled) {
+    border-color: transparent;
+}
+
 
 .components-toggle .btn.is-active {
     background: var(--sage-dark);
@@ -395,7 +418,16 @@
 
 .components-nav {
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.components-nav .btn {
+    padding: 6px 10px;
+    min-width: 36px;
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
 .components-page-indicator {
@@ -407,6 +439,7 @@
     color: var(--ink);
     font-weight: 600;
     text-align: center;
+    flex: 0 0 auto;
 }
 
 .components-content {
@@ -416,12 +449,12 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 12px 12px;
-    flex: 0 0 auto;
-    height: auto;
+    flex: 1 1 auto;
+    height: 100%;
     margin: 0;
     overflow: auto;
     scrollbar-width: none;
-    max-height: none;
+    max-height: 100%;
 }
 
 .components-content::-webkit-scrollbar {
@@ -446,14 +479,22 @@
     font-weight: 600;
 }
 
+.components-header h3 {
+    margin: 0;
+    font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 .components-empty {
     color: var(--ink-soft);
 }
 
 .components-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 8px;
 }
 
 .component-name {
@@ -990,6 +1031,17 @@
     color: var(--card);
 }
 
+.panel-active .btn:disabled,
+.panel-span.panel-has-preview:not(.panel-active):hover .btn:disabled,
+.panel-compact:not(.panel-span):not(.panel-locked):hover .btn:disabled,
+.panel-has-items:hover .btn:disabled {
+    background: var(--linen);
+    border-color: var(--border);
+    color: var(--ink-soft);
+    box-shadow: none;
+    transform: none;
+}
+
 .panel-active .btn-primary,
 .panel-span.panel-has-preview:not(.panel-active):hover .btn-primary,
 .panel-compact:not(.panel-span):not(.panel-locked):hover .btn-primary,
@@ -997,6 +1049,15 @@
     background: var(--sage-dark);
     border-color: var(--sage-dark);
     color: var(--card);
+}
+
+.panel-active .btn-primary:disabled,
+.panel-span.panel-has-preview:not(.panel-active):hover .btn-primary:disabled,
+.panel-compact:not(.panel-span):not(.panel-locked):hover .btn-primary:disabled,
+.panel-has-items:hover .btn-primary:disabled {
+    background: var(--linen);
+    border-color: var(--border);
+    color: var(--ink-soft);
 }
 
 .preview-box {

@@ -31,7 +31,7 @@ const TextInputPanel = ({ activePanel, previewImage, setActivePanel, handleTextI
             <button type="button" onClick={handleTextImageClick} className="btn btn-primary" disabled={Boolean(previewImage)}>
                 Customize Font
             </button>
-            <button type="button" onClick={clearTextBox} className="btn" disabled={Boolean(previewImage)}>
+            <button type="button" onClick={clearTextBox} className="btn btn-clear" disabled={Boolean(previewImage)}>
                 Clear Text
             </button>
         </div>

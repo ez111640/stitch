@@ -3,6 +3,7 @@ import React from 'react';
 const CustomizePanel = ({
     activePanel,
     previewImage,
+    previewText,
     setActivePanel,
     fontFamily,
     setFontFamily,
@@ -20,8 +21,13 @@ const CustomizePanel = ({
     clearPreviewBox
 }) => (
     <div
-        className={`panel panel-compact panel-span ${previewImage ? 'panel-has-preview' : ''} ${activePanel === 'customize' && previewImage ? 'panel-active' : ''}`}
+        className={`panel panel-compact panel-span ${(previewImage || previewText) ? 'panel-has-preview' : ''} ${activePanel === 'customize' && (previewImage || previewText) ? 'panel-active' : ''}`}
         onClick={() => setActivePanel('customize')}
+        onMouseEnter={() => {
+            if (previewImage || previewText) {
+                setActivePanel('customize');
+            }
+        }}
     >
         <div className="panel-header">
             <div className="panel-title-row">
@@ -175,13 +181,28 @@ const CustomizePanel = ({
             )}
         </div>
         <div className="action-row">
-            <button type="button" onClick={addToHoop} disabled={!previewImage} className="btn btn-primary">
+            <button
+                type="button"
+                onClick={addToHoop}
+                disabled={(!previewImage && !previewText) || activePanel !== 'customize'}
+                className="btn btn-primary"
+            >
                 Add to Hoop
             </button>
-            <button type="button" onClick={resetCustomizeControls} disabled={!previewImage} className="btn btn-reset">
+            <button
+                type="button"
+                onClick={resetCustomizeControls}
+                disabled={(!previewImage && !previewText) || activePanel !== 'customize'}
+                className="btn"
+            >
                 Reset Colors
             </button>
-            <button type="button" onClick={clearPreviewBox} className="btn">
+            <button
+                type="button"
+                onClick={clearPreviewBox}
+                disabled={(!previewImage && !previewText) || activePanel !== 'customize'}
+                className="btn"
+            >
                 Clear Preview
             </button>
         </div>

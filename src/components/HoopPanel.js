@@ -118,7 +118,7 @@ const HoopPanel = ({
             >
                 {hoopImages.length === 0 ? (
                     <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        Add images from step 2.
+                        Add an item to begin positioning.
                     </div>
                 ) : (
                     hoopImages.map((item) => (

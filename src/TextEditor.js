@@ -300,6 +300,115 @@ const premadeComponents = [
         )
     },
     {
+        id: 'premade-rose',
+        name: 'Single Rose',
+        width: 140,
+        height: 140,
+        ratio: 1,
+        src: createSvgDataUrl(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+                <defs>
+                    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#e8a1a8"/>
+                        <stop offset="1" stop-color="#c46b78"/>
+                    </linearGradient>
+                </defs>
+                <rect width="140" height="140" fill="none"/>
+                <path d="M70 24C56 24 46 34 46 48C46 62 58 74 70 78C82 74 94 62 94 48C94 34 84 24 70 24Z" fill="url(#rose)" stroke="#3a312b" stroke-width="3"/>
+                <path d="M58 50C60 42 66 38 70 38C74 38 80 42 82 50" fill="none" stroke="#3a312b" stroke-width="2"/>
+                <path d="M50 62C50 52 58 50 64 52C72 54 76 62 70 70C64 78 50 72 50 62Z" fill="#d48792" stroke="#3a312b" stroke-width="2"/>
+                <path d="M90 62C90 52 82 50 76 52C68 54 64 62 70 70C76 78 90 72 90 62Z" fill="#d48792" stroke="#3a312b" stroke-width="2"/>
+                <path d="M70 78C64 86 58 96 56 110" stroke="#3a312b" stroke-width="3" fill="none"/>
+                <path d="M70 78C76 86 82 96 84 110" stroke="#3a312b" stroke-width="3" fill="none"/>
+                <path d="M52 98C58 92 64 90 70 90C76 90 82 92 88 98" fill="#9fb5a5" stroke="#3a312b" stroke-width="3"/>
+            </svg>`
+        )
+    },
+    {
+        id: 'premade-tulip',
+        name: 'Tulip',
+        width: 130,
+        height: 140,
+        ratio: 130 / 140,
+        src: createSvgDataUrl(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="130" height="140" viewBox="0 0 130 140">
+                <rect width="130" height="140" fill="none"/>
+                <path d="M65 26C52 32 44 44 44 58C44 74 54 88 65 94C76 88 86 74 86 58C86 44 78 32 65 26Z" fill="#d982a1" stroke="#3a312b" stroke-width="3"/>
+                <path d="M65 94V120" stroke="#3a312b" stroke-width="3"/>
+                <path d="M46 92C52 100 58 104 65 106" fill="none" stroke="#3a312b" stroke-width="3"/>
+                <path d="M84 92C78 100 72 104 65 106" fill="none" stroke="#3a312b" stroke-width="3"/>
+                <path d="M36 110C48 104 56 104 65 104C74 104 82 104 94 110" fill="#9fb5a5" stroke="#3a312b" stroke-width="3"/>
+            </svg>`
+        )
+    },
+    {
+        id: 'premade-mushroom',
+        name: 'Mushroom',
+        width: 140,
+        height: 120,
+        ratio: 140 / 120,
+        src: createSvgDataUrl(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="140" height="120" viewBox="0 0 140 120">
+                <rect width="140" height="120" fill="none"/>
+                <path d="M24 60C28 34 52 20 70 20C88 20 112 34 116 60Z" fill="#d982a1" stroke="#3a312b" stroke-width="3"/>
+                <path d="M52 60C54 82 56 98 70 104C84 98 86 82 88 60Z" fill="#f5efe6" stroke="#3a312b" stroke-width="3"/>
+                <circle cx="52" cy="44" r="6" fill="#f5efe6" opacity="0.85"/>
+                <circle cx="70" cy="36" r="6" fill="#f5efe6" opacity="0.85"/>
+                <circle cx="88" cy="46" r="6" fill="#f5efe6" opacity="0.85"/>
+            </svg>`
+        )
+    },
+    {
+        id: 'premade-snowflake',
+        name: 'Snowflake',
+        width: 120,
+        height: 120,
+        ratio: 1,
+        src: createSvgDataUrl(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+                <rect width="120" height="120" fill="none"/>
+                <g stroke="#3a312b" stroke-width="4" stroke-linecap="round">
+                    <path d="M60 12V108"/>
+                    <path d="M12 60H108"/>
+                    <path d="M24 24L96 96"/>
+                    <path d="M96 24L24 96"/>
+                    <path d="M60 12L54 22"/>
+                    <path d="M60 12L66 22"/>
+                    <path d="M60 108L54 98"/>
+                    <path d="M60 108L66 98"/>
+                    <path d="M12 60L22 54"/>
+                    <path d="M12 60L22 66"/>
+                    <path d="M108 60L98 54"/>
+                    <path d="M108 60L98 66"/>
+                </g>
+            </svg>`
+        )
+    },
+    {
+        id: 'premade-songbird',
+        name: 'Songbird',
+        width: 150,
+        height: 120,
+        ratio: 150 / 120,
+        src: createSvgDataUrl(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="150" height="120" viewBox="0 0 150 120">
+                <defs>
+                    <linearGradient id="bird" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#a8b7c9"/>
+                        <stop offset="1" stop-color="#7e8ea3"/>
+                    </linearGradient>
+                </defs>
+                <rect width="150" height="120" fill="none"/>
+                <path d="M24 76C36 56 64 50 84 54C108 58 124 72 120 88C118 98 106 104 90 104C64 104 42 94 24 76Z" fill="url(#bird)" stroke="#3a312b" stroke-width="3"/>
+                <path d="M66 58C78 58 90 62 102 70C90 74 80 78 66 78C58 78 48 74 42 68C48 62 56 58 66 58Z" fill="#f5efe6" opacity="0.8"/>
+                <circle cx="92" cy="70" r="4" fill="#3a312b"/>
+                <path d="M104 72L120 66L110 80Z" fill="#d9a25f" stroke="#3a312b" stroke-width="2"/>
+                <path d="M54 86C60 96 66 104 72 110" stroke="#3a312b" stroke-width="3"/>
+                <path d="M72 82C78 92 84 100 90 106" stroke="#3a312b" stroke-width="3"/>
+            </svg>`
+        )
+    },
+    {
         id: 'premade-diamond',
         name: 'Diamond Star',
         width: 120,
@@ -414,7 +523,7 @@ const tutorialSteps = [
 ];
 
 const TextEditor = () => {
-    const componentsPageSize = 6;
+    const componentsPageSize = 8;
     const [previewImage, setPreviewImage] = useState('');
     const [previewText, setPreviewText] = useState('');
     const [previewSourceId, setPreviewSourceId] = useState(null);
@@ -1057,7 +1166,14 @@ const TextEditor = () => {
     const handleMakePattern = async () => {
         const circleImage = await exportCircleImage();
         if (!circleImage) return;
-        navigate('/pattern', { state: { circleImage, textColor, previewBackground } });
+        navigate('/pattern', {
+            state: {
+                circleImage,
+                textColor,
+                previewBackground,
+                themePalette: activeTheme?.palette || null
+            }
+        });
     };
 
     useEffect(() => {
@@ -1242,6 +1358,7 @@ const TextEditor = () => {
                     <CustomizePanel
                         activePanel={activePanel}
                         previewImage={previewImage}
+                        previewText={previewText}
                         setActivePanel={setActivePanel}
                         fontFamily={fontFamily}
                         setFontFamily={setFontFamily}
